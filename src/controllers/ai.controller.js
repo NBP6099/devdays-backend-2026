@@ -32,7 +32,7 @@ export const interpretMetricsJSON = async (req, res) => {
         const { query } = req.body;
         const audits = await Audit.find().sort({ timestamp: -1 }).limit(10);
         const jsonResponse = await aiService.chatWithMetricsStructured(query, audits);
-        res.status(200).json(jsonResponse); // Enviamos el JSON estructurado
+        res.status(200).json(jsonResponse); 
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

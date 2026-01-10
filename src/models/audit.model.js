@@ -10,12 +10,12 @@ const auditSchema = new Schema({
         required: true
     },
     responseTime: {
-        type: Number, // Tiempo en milisegundos
+        type: Number, 
         required: true
     },
     threshold: { 
         type: Number, 
-        default: 100 // El límite de 100ms que pide el enunciado
+        default: 100 
     },
     status: { 
         type: String, 
