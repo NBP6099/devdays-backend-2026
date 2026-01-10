@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+      - "9464:9464"
+    environment:
+      - MONGO_URI=mongodb://db:27017/devdays_db
+      - JWT_SECRET=una_clave_muy_segura
+    depends_on:
+      - db
+
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
